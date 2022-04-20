@@ -1,0 +1,42 @@
+name: ftp-sync
+description: "LFTP mirror command"
+author: Stefano Pulze <dev@stefanopulze.com>
+
+inputs:
+  server:
+    description: "FTP host url"
+    required: true
+  username:
+    description: "FTP username"
+    required: true
+  password:
+    description: "FTP password"
+    required: true
+  localDir:
+    description: "Local directory"
+    required: false
+    default: "."
+  remoteDir:
+    description: "Remote directory"
+    required: false
+    default: "."
+  forceSsl:
+    description: 'Force SSL encryption'
+    required: false
+    default: 'false'
+  allowSsl:
+    description: 'Allow SSL'
+    required: false
+    default: 'off'
+
+outputs:
+  result:
+    description: lftp result
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: 'blue'
+  icon: 'upload-cloud'
