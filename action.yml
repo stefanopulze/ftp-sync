@@ -28,10 +28,14 @@ inputs:
     description: 'Allow SSL'
     required: false
     default: 'off'
-
-outputs:
-  result:
-    description: lftp result
+  logLevel:
+    description: 'Log level'
+    required: false
+    default: ''
+  exclude:
+    description: 'Excelude files or directory'
+    required: false
+    default: ''
 
 runs:
   using: 'docker'

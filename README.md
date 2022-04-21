@@ -4,7 +4,7 @@ Copying file via lftp using this Github action.
 
 ## Example usage
 
-```
+```yaml
 name: Deploy via ftp
 on: push
 jobs:
@@ -34,3 +34,28 @@ localDir | The local directory to copy | No | .
 remoteDir | The remote directory to copy to | No | .
 forceSsl | Force SSL encryption | No | false
 allowSsl | Allow SSL | No | 'off'
+logLevel | Log level express in "v" | No | 'off'
+exclude | Exclude files or directories semicolon separeted  | No | 'off'
+
+## Advanced Example usage
+
+```yaml
+name: Deploy via ftp
+on: push
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+      uses: stefanopulze/ftp-sync@main
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "dist"
+        remoteDir: "www"
+        logLevel: "vv"
+        exclude: "folder1;file2"
+```
