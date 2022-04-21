@@ -34,8 +34,7 @@ localDir | The local directory to copy | No | .
 remoteDir | The remote directory to copy to | No | .
 forceSsl | Force SSL encryption | No | false
 allowSsl | Allow SSL | No | 'off'
-logLevel | Log level express in "v" | No | ''
-exclude | Exclude files or directories semicolon separeted  | No | ''
+opts | Extra options for LFTP, [see manual](https://lftp.yar.ru/lftp-man.html) | No | ''
 
 ## Advanced Example usage
 
@@ -56,6 +55,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         localDir: "dist"
         remoteDir: "www"
-        logLevel: "vv"
-        exclude: "folder1;file2"
+        opts: "-vv -x folder1 -x file2"
 ```

@@ -28,12 +28,8 @@ inputs:
     description: 'Allow SSL'
     required: false
     default: 'off'
-  logLevel:
-    description: 'Log level'
-    required: false
-    default: ''
-  exclude:
-    description: 'Excelude files or directory'
+  opts:
+    description: 'Extra option for LFTP'
     required: false
     default: ''
 
