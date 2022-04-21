@@ -55,6 +55,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Upload ftp
+      id: upload
       uses: stefanopulze/ftp-sync@main
       with:
         server: ${{ secrets.FTP_SERVER }}
@@ -63,4 +64,7 @@ jobs:
         localDir: "dist"
         remoteDir: "www"
         opts: "-vv -x folder1 -x file2"
+
+    - name: Get the output elapsed
+      run: echo "The time was ${{ steps.upload.outputs.elapsed }}"
 ```
