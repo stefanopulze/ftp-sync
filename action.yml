@@ -33,6 +33,10 @@ inputs:
     required: false
     default: ''
 
+output:
+  elapsed:
+    description: 'Elapsed time in seconds for upload process'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'

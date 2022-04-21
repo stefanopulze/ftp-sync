@@ -36,6 +36,13 @@ forceSsl | Force SSL encryption | No | false
 allowSsl | Allow SSL | No | 'off'
 opts | Extra options for LFTP, [see manual](https://lftp.yar.ru/lftp-man.html) | No | ''
 
+## Outputs
+
+## `elapsed`
+
+Elapsed time in seconds for upload process.
+
+
 ## Advanced Example usage
 
 ```yaml
