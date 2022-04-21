@@ -34,8 +34,8 @@ localDir | The local directory to copy | No | .
 remoteDir | The remote directory to copy to | No | .
 forceSsl | Force SSL encryption | No | false
 allowSsl | Allow SSL | No | 'off'
-logLevel | Log level express in "v" | No | 'off'
-exclude | Exclude files or directories semicolon separeted  | No | 'off'
+logLevel | Log level express in "v" | No | ''
+exclude | Exclude files or directories semicolon separeted  | No | ''
 
 ## Advanced Example usage
 
